@@ -3,9 +3,7 @@ import 'package:english_words/english_words.dart';
 
 void main() => runApp(MyApp());
 
-// #docregion MyApp
 class MyApp extends StatelessWidget {
-  // #docregion build
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,17 +11,12 @@ class MyApp extends StatelessWidget {
       home: RandomWords(),
     );
   }
-  // #enddocregion build
 }
-// #enddocregion MyApp
 
-// #docregion RWS-var
 class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
-  // #enddocregion RWS-var
 
-  // #docregion _buildSuggestions
   Widget _buildSuggestions() {
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
@@ -37,9 +30,7 @@ class RandomWordsState extends State<RandomWords> {
           return _buildRow(_suggestions[index]);
         });
   }
-  // #enddocregion _buildSuggestions
 
-  // #docregion _buildRow
   Widget _buildRow(WordPair pair) {
     return ListTile(
       title: Text(
@@ -48,9 +39,7 @@ class RandomWordsState extends State<RandomWords> {
       ),
     );
   }
-  // #enddocregion _buildRow
 
-  // #docregion RWS-build
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,10 +49,7 @@ class RandomWordsState extends State<RandomWords> {
       body: _buildSuggestions(),
     );
   }
-  // #enddocregion RWS-build
-  // #docregion RWS-var
 }
-// #enddocregion RWS-var
 
 class RandomWords extends StatefulWidget {
   @override
